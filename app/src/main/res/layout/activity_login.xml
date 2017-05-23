@@ -40,5 +40,10 @@
         style="@style/Base.Widget.AppCompat.Button.Borderless"
         android:text="Register"
         android:layout_height="wrap_content" />
-
+    <Button
+        android:id="@+id/continueAsGuest"
+        android:layout_width="match_parent"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        android:text="Continue as guest"
+        android:layout_height="wrap_content" />
 </android.widget.LinearLayout>

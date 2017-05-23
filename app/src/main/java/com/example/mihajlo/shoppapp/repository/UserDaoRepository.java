@@ -33,9 +33,9 @@ public class UserDaoRepository {
                 return  null;
             }
             if(databaseUser.getPassword().equals(user.getPassword())){
-                return user;
-            }else{
                 return databaseUser;
+            }else{
+                return null;
             }
         } catch (SQLException e) {
             e.printStackTrace();

@@ -9,6 +9,7 @@ import com.example.mihajlo.shoppapp.model.Item;
 
 import org.androidannotations.annotations.EViewGroup;
 import org.androidannotations.annotations.ViewById;
+import org.androidannotations.annotations.res.IntegerRes;
 import org.w3c.dom.Text;
 
 /**
@@ -33,7 +34,8 @@ public class ItemView extends LinearLayout{
         name.setText(item.getName());
         description.setText(item.getDescription());
         price.setText(item.getPrice());
-        date.setText(item.getDate().toString());
+        date.setText(Integer.toString(item.getUser()));
+
     }
 
     public ItemView(Context context) {

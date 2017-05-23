@@ -10,7 +10,7 @@ public class LoggedInUser {
 
     static LoggedInUser u = null;
 
-    static User user;
+    User user;
 
     public static LoggedInUser getInstance(){
         if(u == null){
@@ -20,14 +20,14 @@ public class LoggedInUser {
     }
 
     protected  LoggedInUser(){
-        user = new User();
+
     }
 
-    public static User getUser() {
+    public User getUser() {
         return user;
     }
 
-    public static void setUser(User user) {
-        LoggedInUser.user = user;
+    public  void setUser(User user) {
+        this.user = user;
     }
 }

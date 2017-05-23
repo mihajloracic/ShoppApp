@@ -27,11 +27,22 @@ public class LoginActivity extends AppCompatActivity {
     @Bean
     UserDaoRepository repository;
 
+    @Override
+    public void onBackPressed() {
+
+    }
+
+    @Click
+    void continueAsGuest(){
+        MainActivity_.intent(this).start();
+    }
+
     @Click
     void login(){
         LoggedInUser.getInstance().setUser(repository.login(new User(username.getText().toString(),password.getText().toString())));
+        User user =  LoggedInUser.getInstance().getUser();
         if(LoggedInUser.getInstance().getUser() != null){
-            Toast.makeText(this,"Welcome " + username.getText().toString(),Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Welcome " + username.getText().toString() + " id " + LoggedInUser.getInstance().getUser().getId(),Toast.LENGTH_LONG).show();
             MainActivity_.intent(this).start();
         }else{
             Toast.makeText(this,"login fail",Toast.LENGTH_LONG).show();

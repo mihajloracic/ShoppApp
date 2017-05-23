@@ -8,6 +8,7 @@ import android.widget.Toast;
 import com.example.mihajlo.shoppapp.R;
 import com.example.mihajlo.shoppapp.model.Item;
 import com.example.mihajlo.shoppapp.repository.ItemDaoRepository;
+import com.example.mihajlo.shoppapp.utils.LoggedInUser;
 
 import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.Click;
@@ -34,7 +35,7 @@ public class NewItem extends AppCompatActivity {
     void post(){
         if(name.getText().toString() != ""){
             repository.create(new Item(name.getText().toString(),description.getText().toString(),
-                    new Date().toString(),price.getText().toString(),0));
+                    new Date().toString(),price.getText().toString(), LoggedInUser.getInstance().getUser().getId()));
             finish();
         }else{
             Toast.makeText(this,"Please fill all the fileds",Toast.LENGTH_LONG).show();
