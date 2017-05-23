@@ -4,4 +4,6 @@
         android:title="Logout"/>
     <item android:id="@+id/myAccount"
         android:title="My Account" />
+    <item android:id="@+id/order"
+        android:title="Change grid order" />
 </menu>

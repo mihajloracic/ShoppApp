@@ -34,7 +34,7 @@ public class ItemView extends LinearLayout{
         name.setText(item.getName());
         description.setText(item.getDescription());
         price.setText(item.getPrice());
-        date.setText(Integer.toString(item.getUser()));
+        date.setText(item.getDate());
 
     }
 

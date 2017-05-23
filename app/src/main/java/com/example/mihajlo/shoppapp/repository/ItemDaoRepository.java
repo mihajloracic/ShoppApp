@@ -33,6 +33,18 @@ public class ItemDaoRepository {
         return itemList;
     }
 
+    public void update(Item item){
+        itemDao.update(item);
+    }
+
+    public void delete(int id){
+        itemDao.delete(itemDao.queryForId((long) id));
+    }
+
+    public Item getById(int id){
+        return itemDao.queryForId((long) id);
+    }
+
     public List<Item> getItems(){
         return itemDao.queryForAll();
     }

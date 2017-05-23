@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -29,7 +30,7 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
 
     @ViewById
-    ListView listview;
+    GridView listview;
 
     @Bean
     ItemListAdapter adapter;
@@ -40,10 +41,17 @@ public class MainActivity extends AppCompatActivity {
     @AfterViews
     void bindAdapter(){
         updateList();
+        listview.setNumColumns(2);
 
     }
 
-
+    private void setNumCols(){
+        if(listview.getNumColumns() == 1){
+            listview.setNumColumns(2);
+        }else{
+            listview.setNumColumns(1);
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -62,11 +70,14 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.myAccount:
                 if(LoggedInUser.getInstance().getUser() !=null){
-                    MyAccount_.intent(this).start();
+                    MyAccount_.intent(this).startForResult(0);
                 }else{
                     Toast.makeText(this,"Please login to view your account",Toast.LENGTH_LONG).show();
                 }
 
+                return true;
+            case R.id.order:
+                setNumCols();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
