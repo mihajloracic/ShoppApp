@@ -3,7 +3,7 @@
     <item android:id="@+id/logut"
         android:title="Logout"/>
     <item android:id="@+id/myAccount"
-        android:title="My Account" />
+        android:title="My items" />
     <item android:id="@+id/order"
         android:title="Change grid order" />
 </menu>
