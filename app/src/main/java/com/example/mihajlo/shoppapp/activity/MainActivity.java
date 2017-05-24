@@ -64,6 +64,11 @@ public class MainActivity extends AppCompatActivity {
     void bindAdapter(){
         updateList();
         listview.setNumColumns(2);
+        if(LoggedInUser.getInstance().getUser() != null){
+            Toast.makeText(this, "Welcome " + LoggedInUser.getInstance().getUser().getUsername(), Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(this, "Welcome Guest user", Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override
